@@ -1,0 +1,76 @@
+Cloud de stockage décentralisé (P2P), redondant (équivalence RAID par nœud) et privé (algorithmes cryptographiques de chiffrement)
+
+
+
+
+Dans un cloud classique, si un data center brûle ou subit une panne majeure, les données peuvent être inaccessibles, voire perdues. Dans un modèle P2P, les données sont fragmentées et distribuées mondialement. L'équivalent du RAID (généralement implémenté via une méthode mathématique appelée Erasure Coding) permet de reconstituer un fichier entier même si 50 % ou 70 % des nœuds hébergeant ses fragments se déconnectent simultanément.
+Le chiffrement côté client (avant l'envoi sur le réseau) garantit que les nœuds de stockage n'ont aucune idée de ce qu'ils hébergent. Contrairement aux GAFAM, personne ne peut scanner, analyser ou monétiser le contenu de vos fichiers.
+
+Aucune entreprise centrale ou gouvernement ne peut décider de fermer votre compte arbitrairement ou de supprimer un fichier spécifique, puisque le registre de stockage est décentralisé et chiffré.
+Les particuliers ou petites entreprises qui fournissent l'espace de stockage peuvent éteindre leur machine à tout moment. Le réseau doit donc surveiller la santé des fragments de données en permanence et générer de nouvelles copies de sauvegarde sur d'autres nœuds dès que la redondance passe sous un certain seuil. Cela consomme beaucoup de bande passante réseau.
+Le problème de volatilité des nœuds serait amoindri par la sélection par l'utilisateur de l'algorithme allouant ses données sur d'autres nœuds/réseaux de nœuds en fonction de paramètres qu'il choisit.
+
+En permettant à l'utilisateur de définir ses propres contrats de niveau de service. Un utilisateur pourrait choisir de stocker des archives froides sur des nœuds à haute volatilité avec un fort taux de redondance (plus lent, mais peu coûteux en "ratio"), tandis qu'il allouerait ses documents de travail à un sous-réseau de nœuds à haute disponibilité.
+
+Télécharger un fichier implique de récupérer des fragments depuis des dizaines de nœuds géographiquement dispersés, avec des connexions asymétriques (la fibre d'un particulier n'est pas la bande passante d'un serveur AWS). Les performances peuvent être irrégulières.
+l'infrastructure sera développée proportionellement à l'intérêt que les gens ont pour le service. Il ne s'agit pas de faire de l'argent en investissant dans des infrastructures, l'infrastructure n'est que le support. On peut imaginer la création d'infrastructures physiques et l'utilisation de darknets.
+
+La décentralisation implique une responsabilité totale. Si l'utilisateur perd sa clé cryptographique (ou sa phrase de récupération), il n'y a pas de bouton "Mot de passe oublié". Les données deviennent définitivement des fragments de code illisibles.
+La gestion des clés choisie est une philosophie choissant consciemment ses compromis.
+
+Dans un cas de partage de clé public, les utilisateurs ont le choix de donner la clé permettant d'accéder à des données. Plus ces données sont utilisées, plus les paires qui les lisent peuvent diminuer son coût informationnel total, soit en augmentant le coût informationnel total de leur propre ressources, soit en allouant une nouvelle infrastructure à l'hébergement. Cela permet de prioriser l'accès à ce qui est le plus souvent utilisé.
+
+
+
+Coût informationnel total : un quanta d'information, le nombre de connexions parallèles, la proportion d'équilibre de latence et de bande passante entre les différentes connexions, la latence totale, la bande passante totale et la sûreté d'accès.
+nœuds actifs : ceux qui répondent en moins de 120 secondes par rapport au temps d'envoi inscrit dans la blockchain.
+Sûreté d'accès : dépend de la quantité de preuves cryptographiques récentes crées par des nœuds diverses et actifs. On note X la diversité. [La notion de diversité reste à approfondir, notamment si on choisit des groupes avec l'indice de diversité de Gini-Simpson.]
+
+
+
+La rémunération passerait par le coût informationnel total. La mesure et le calcul de cette valeur se ferait par les autres pairs, puis ils devraient l'écrire dans une blockchain. Le réseau se limite au nœud actif le plus lent. Lorsqu'un nœud inactif souhaite devenir actif, il ratrappe en demandant une mise à jour de la blockchain au nœud actif avec le coût informationnel total le plus bas.
+
+On demande des preuves cryptographique de stockage lorsque le stockage en question est demandé en lecture. Les preuves peuvent aussi être fait de manière programmée, il suffit pour le propriétaire d'automatiser la lecture.
+
+Rien ne doit être supprimé sans que cela soit voulu par le propriétaire, soit par le délai de suppression automatique définit au préalable par le propriétaire. Plus ce délai est demandé élevé, plus le coût informationnel total doit être élevé, proportionellemement à ce que cela coûte, plus un coût informationnel unitaire de marge.
+
+De manière similaire à Monero, tous les nœuds sont anonymes, le traitement de leur coût informationnel total aussi. Leur traitement doit résulter de l'évaluation d'absolument tous les nœuds actifs. Ce système ne fonctionnerait à grand échelle que si les informations nécessitées par le calcul du coût informationnel total soient partagées de pair en pair, dans la blockchain.
+
+Créer une nouvelle identité doit coûter la somme du coût inforationnel total que tous les autres nœuds doivent dépenser pour inclure cette nouvelle identité, plus, en marge, au moins un quanta d'information.
+Autrement dit, pour exister, un nouveau nœud doit parler à tous les nœuds qui existent, rembourser les ressources qu'il consomme en faisant inscrire son existence plus mettre à disposition un quanta d'information, une latence, une bande passante et un nombre de connexion parallèle fixée par la valeur moyenne de l'économie actuelle inscrite dans la blockchain.
+
+
+
+---
+
+
+
+Prompt CIT :
+
+# Système : "Cloud de stockage décentralisé (P2P), redondant (équivalence RAID par nœud) et privé (algorithmes cryptographiques de chiffrement)" # Définitions : "Coût informationnel total : un quanta d'information, le nombre de connexions parallèles, la proportion d'équilibre de latence et de bande passante entre les différentes connexions, la latence totale, la bande passante totale et la sûreté d'accès. nœuds actifs : ceux qui répondent en moins de 120 secondes par rapport au temps d'envoi inscrit dans la blockchain. Sûreté d'accès : dépend de la quantité de preuves cryptographiques récentes crées par des nœuds diverses et actifs. On note X la diversité. [La notion de diversité reste à approfondir, notamment si on choisit des groupes avec l'indice de diversité de Gini-Simpson.]" ## Prompt : "Peux-tu inférer l'équation du coût informationnel total qui te semble la plus cohérante avec le système ?"
+
+
+---
+
+
+
+AI Generated :
+
+AVANTAGES ET COMPROMIS DU SYSTÈME
+Les Avantages (Pourquoi ce système est supérieur)
+Censure Impossible : L'association d'un darknet, de l'anonymat total et de l'absence de serveurs centraux rend le système immunisé contre les injonctions gouvernementales, les saisies de serveurs et les fermetures arbitraires.
+
+Affranchissement Financier : L'économie basée sur le troc capacitaire (Share Ratio) élimine les frais d'entrée, les cartes bancaires, la volatilité des cryptomonnaies spéculatives et les intérêts corporatistes. Le système ne sert que ses utilisateurs.
+
+Autorégulation par le Risque : En forçant l'utilisateur à payer (en ratio) la redondance et la durée exactes qu'il désire, le réseau se protège du spam de données "poubelles" éternelles.
+
+Optimisation CDN Naturelle : Le système de récompense sur la lecture crée un réseau de diffusion de contenu autogéré d'une efficacité redoutable pour les données publiques virales.
+
+Les Compromis (Les défis inhérents à l'architecture)
+Lourdeur Computationnelle (CPU) : Maintenir un anonymat parfait type Monero, vérifier les signatures circulaires, générer des preuves cryptographiques (PoW) pour chaque nouveau nœud et maintenir une blockchain P2P complète demande une puissance de calcul locale colossale pour de simples utilisateurs.
+
+Vulnérabilité du "Cold Storage" (Données Froides) : Puisque l'augmentation du Share Ratio est poussée par les requêtes de lecture, le réseau "récompense" moins le stockage passif de données privées non consultées. Si la marge de sécurité payée à l'avance est épuisée (ex: mort soudaine de plusieurs nœuds hébergeurs), ces archives non lues risquent de se dégrader sans que le réseau n'ait d'incitation forte à les répliquer.
+
+Latence Irégulière : Le routage type Darknet (qui fait rebondir les paquets pour masquer les IP) couplé à la fragmentation des données entraîne inévitablement une latence plus élevée et des débits plus capricieux qu'un serveur Amazon S3 classique.
+
+Impitoyabilité Utilisateur : Pas de récupération de mot de passe, impossibilité de récupérer des données si la redondance choisie (et payée) s'avère insuffisante face à la volatilité réelle du réseau. C'est le prix brut de l'informatique souveraine.
